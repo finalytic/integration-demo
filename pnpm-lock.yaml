@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@finalytic/client': ^5.4.5
   '@finalytic/eslint-config': ^1.0.5
-  '@finalytic/integration-v1': 0.1.4
+  '@finalytic/integration-v1': 0.1.6
   '@finalytic/utils': ^4.3.1
   '@finalytic/worker-build': ^1.0.6
   '@temporalio/activity': 1.4.0
@@ -16,7 +16,7 @@ specifiers:
 
 dependencies:
   '@finalytic/client': 5.4.5
-  '@finalytic/integration-v1': 0.1.4_smm5gzbwbhvzz6sd3fqepzkome
+  '@finalytic/integration-v1': 0.1.6_smm5gzbwbhvzz6sd3fqepzkome
   '@finalytic/utils': 4.3.1
   '@temporalio/activity': 1.4.0
   '@temporalio/client': 1.4.0
@@ -129,8 +129,8 @@ packages:
       - supports-color
     dev: true
 
-  /@finalytic/integration-v1/0.1.4_smm5gzbwbhvzz6sd3fqepzkome:
-    resolution: {integrity: sha512-06jxXQBBZ/ntx8uUJjd4cWolrpH8OIBELOqjjkaI0UDIkhVlUDnEA1KhI66mz1KZD4zvi/UG/mvL178mjw6YHA==}
+  /@finalytic/integration-v1/0.1.6_smm5gzbwbhvzz6sd3fqepzkome:
+    resolution: {integrity: sha512-yzXZ3EmrB2K3HZOvoqnJcLJyOSaN52jPxftLJNjx++Lukin8i3LBk9Mm85liE3oGIbX7K793a8CazqsTJGMG1A==}
     peerDependencies:
       '@finalytic/client': '*'
       '@finalytic/utils': '*'
