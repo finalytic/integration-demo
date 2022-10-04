@@ -1,0 +1,14 @@
+#fly.toml file generated for finalytic-worker on 2022-06-14T14:24:20+05:30
+
+app = "finalytic-integration-demo"
+
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+  GRAPHQL_URI = "http://finalytic-hasura.fly.dev/v1/graphql"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true

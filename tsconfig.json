@@ -1,0 +1,13 @@
+{
+  "extends": "@finalytic/worker-build",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "build/main",
+    "strictNullChecks": false,
+    "rootDir": "src",
+    "baseUrl": "."
+  },
+  "include": ["src"],
+  "exclude": ["node_modules/**"],
+  "compileOnSave": false
+}

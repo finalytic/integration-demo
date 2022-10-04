@@ -1,0 +1,47 @@
+{
+  "name": "@finalytic/integration-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Finalytic Integration demo",
+  "repository": "https://github.com/finalytic/integration-demo",
+  "license": "UNLICENSED",
+  "keywords": [],
+  "main": "dist/entry.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "clear": "trash dist",
+    "start": "node dist",
+    "dev": "worker-build-dev",
+    "inspect": "node --inspect --inspect-brk dist",
+    "build": "worker-build",
+    "deploy-ci": "yarn deploy:build && yarn deploy:push",
+    "deploy": "yarn build && yarn deploy:build && yarn deploy:push && yarn deploy:prune",
+    "deploy:build:mac": "docker image build . -t registry.fly.io/finalytic-integration-demo:latest",
+    "deploy:build": "docker buildx build . --platform linux/amd64 -t registry.fly.io/finalytic-integration-demo:latest",
+    "deploy:push": "docker push registry.fly.io/finalytic-integration-demo:latest",
+    "deploy:prune": "docker image prune --force"
+  },
+  "dependencies": {
+    "@finalytic/integration-v1": "0.1.1",
+    "@finalytic/utils": "^4.3.1",
+    "@temporalio/activity": "1.4.0",
+    "@temporalio/client": "1.4.0",
+    "@temporalio/common": "1.4.0",
+    "@temporalio/worker": "1.4.0",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@finalytic/eslint-config": "^1.0.4",
+    "@finalytic/worker-build": "^1.0.1",
+    "@types/node": "14.18.1",
+    "typescript": "^4.6.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@finalytic"
+    ]
+  },
+  "prettier": "@finalytic/eslint-config/prettier"
+}
