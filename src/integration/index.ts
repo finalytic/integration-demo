@@ -82,6 +82,11 @@ export const integration: AppType = {
       true
     );
 
+    const listingConnectionByUniqueRef = listings.reduce<{[s: string]: string}>((acc, listing) => {
+      listing.connections.forEach(x => acc[x.uniqueRef] = x.id);
+      return acc;
+    }, {});
+
     /*const lastUpdated =
       event.connection.persistentState.reservationUpdatedAt ||
       dayjs().add(-3, 'month').format('YYYY-MM-DD');
@@ -92,9 +97,7 @@ export const integration: AppType = {
         checkIn: '',
         checkOut: '',
         guestName: '',
-        listingConnectionId: listings.find(
-          (x) => x.uniqueRef === reservation.roomId
-        )?.id,
+        listingConnectionId: listingConnectionByUniqueRef[`${reservation.roomId}`]
       },
     ]);
 
